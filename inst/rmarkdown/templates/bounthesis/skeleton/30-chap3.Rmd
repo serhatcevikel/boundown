@@ -1,0 +1,84 @@
+```{r includes-tools, include = F}
+
+# some arbitrary code can be written here that should be executed at the beginning of the chapter
+# maybe option settings, objects to be read, functions to be defined etc
+# note that chunk names must be unique
+# these lines are included here as an example. You may change these according to your needs
+
+library(tidyverse)
+library(data.table)
+library(scales)
+library(pander)
+library(tinytex)
+library(knitr)
+library(lubridate)
+library(kableExtra)
+library(ggpubr)
+library(english)
+
+knitr::opts_chunk$set(echo = F, cache = FALSE, warning = FALSE, message = FALSE)
+options(kableExtra.latex.load_packages = TRUE)
+options(knitr.table.format = "latex")
+
+panderOptions("p.wrap", "")
+panderOptions("table.split.table", Inf)
+panderOptions("table.split.cells", 20)
+
+
+knitr::opts_chunk$set(out.width = "100%") 
+
+
+# a custom function to escape underscores when needed
+caprep <- function(x) str_replace_all(x, "_", "\\\\_")
+
+# a custom function to automatically change numbers up to 10 into text
+verbalize <- function(x) ifelse(x %in% 0:10, as.character(english(x)), x)
+
+# This is necessary to force font in figures to be in Times New Roman font.
+# Please set the path to font files according to your system
+library(showtext)
+font_add(family = "Times New Roman", regular = "/usr/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf",
+         italic = "/usr/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf"
+         )
+showtext_auto()
+
+
+```
+
+# SOME CHAPTER NAME {#some-chapter}
+
+You can include dates as such: `r (Sys.Date() - 1:0) %>% format("%e %B %Y") %>% str_squish %>% pander`
+Multiple numbers can be included automatically as such: `r ((1:3)* 100) %>% comma %>% pander`
+
+
+
+An arbitrary figure can be cross references like Figure&nbsp;\@ref(fig:some-figure).
+
+Non breaking space can be introduced as&nbsp;such, so that the label and number of a referrred tag stay in the same line.
+
+```{r some-figure, fig.cap = "Some arbitrary figure caption in sentence case", echo = F}
+iris %>%
+ggplot(aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point() +
+  theme(text=element_text(family = "Times New Roman", size = 12))
+```
+
+
+
+A table can be cross-references as such: Table&nbsp;\@ref(tab:some-table).
+
+```{r some-table}
+iris[1:20,] %>%
+  kable(caption = "Some Table Title in Title Case",
+      booktabs = T, escape = F) %>%
+  kable_styling() %>%
+  row_spec(row = 0, align = "c")
+```
+
+Extra space between paragraphs can be introduced as such:
+
+\lipsum[5]
+
+\
+
+\lipsum[6]

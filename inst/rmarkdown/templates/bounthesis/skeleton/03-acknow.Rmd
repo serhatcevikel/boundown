@@ -1,0 +1,7 @@
+\chapter*{ACKNOWLEDGEMENTS}
+
+<!--
+some text to test
+-->
+
+\lipsum[1-4]

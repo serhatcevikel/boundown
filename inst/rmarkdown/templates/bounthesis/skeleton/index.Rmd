@@ -1,0 +1,150 @@
+---
+# Change the information for your case
+author: 'Robert Plant'
+authorup: 'ROBERT PLANT'
+date: '2023'
+dyear: '2023'
+month: 'January'
+institution: 'Boğaziçi University'
+institutionup: 'BOĞAZİÇİ UNIVERSITY'
+division: 'Institute for Graduate Studies in Social Sciences'
+advisor: 'Prof. Jimmy Page'
+membera: 'Prof. Ritchie Blackmore'
+memberb: 'Assoc. Prof. John Bonham'
+externala: 'Assist. Prof. John Paul Jones'
+externalb: 'Assist. Prof. Ian Gillan'
+department: 'Management'
+degree: 'Doctor of Philosophy'
+title: 'In Through the Out Door'
+titleup: 'IN THROUGH THE OUT DOOR'
+titletr: "Dış Kapıdan İçeri Doğru" 
+knit: bookdown::render_book
+site: bookdown::bookdown_site
+output:
+  boundown::thesis_pdf:
+      latex_engine: xelatex
+      toc_depth: 2
+      includes:
+        in_header: preamble.tex
+      citation_package: biblatex
+      biblatexoptions: [style=apa6]
+link_citations: false
+bibliography: bib/thesis.bib
+num-depth: 3
+subparagraph: yes
+decoriginality: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00--origin.Rmd"), collapse = '\n  ')`
+abstract: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
+abstracttr: |
+  `r if(knitr:::is_latex_output()) paste(readLines("01-abstract_tr.Rmd"), collapse = '\n  ')`
+cv: |
+  `r if(knitr:::is_latex_output()) paste(readLines("02-cv.Rmd"), collapse = '\n  ')`
+acknow: |
+  `r if(knitr:::is_latex_output()) paste(readLines("03-acknow.Rmd"), collapse = '\n  ')`
+dedication: |
+  `r if(knitr:::is_latex_output()) paste(readLines("04-dedication.Rmd"), collapse = '\n  ')`
+abbr: |
+  `r if(knitr:::is_latex_output()) paste(readLines("05-abbr.Rmd"), collapse = '\n  ')`
+tables: yes
+lot: true
+lof: true
+classoption: a4paper
+---
+
+```{r include_packages, include = FALSE}
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(boundown))
+  devtools::install_github("serhatcevikel/boundown")
+library(tidyverse)
+library(boundown)
+library(knitr)
+library(bookdown)
+library(tinytex)
+
+knitr::opts_chunk$set(dpi = 1200, fig.retina = 10, out.width = "100%")
+caprep <- function(x) str_replace_all(x, "_", "\\\\_")
+
+# To use Times New Roman in plots, copy the below code block to all chapter Rmd files
+# Change the path to fonts accordingly
+{
+library(showtext)
+font_add(family = "Times New Roman", regular = "/usr/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf",
+         italic = "/usr/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf"
+         )
+showtext_auto()
+}
+```
+
+<!--
+It is best to create the approval page and declaration of originality according to the instructions on sbe.boun.edu.tr page
+And export to pdf pages to be included here.
+Filenames are as follows:
+Approval page: approval_page.pdf
+Declaration of Originality: f1_declaration_of_originality.pdf
+-->
+
+<!--
+It is best to select XeLaTeX for PDF generation and tinytex for LaTeX compiling.
+And of course you are strongly encouraged to install tinytex R package are you are required to do so for the above settings.
+-->
+
+<!--
+Some references to test the format:
+
+@zimmermann_inductive_2015
+
+@zimmermann_inductive_2015
+
+[@wheeler_huttunen_neuroeconomic_2016]
+
+[@wheeler_huttunen_neuroeconomic_2016]
+
+@zahera_investors_2018
+
+@zahera_investors_2018
+
+[@weber_disposition_1998]
+
+[@weber_disposition_1998]
+
+
+@yang_discretization_2010
+
+@yang_discretization_2010
+
+[@therneau_survival_2021]
+
+[@therneau_survival_2021]
+
+@xie_knitr_2022
+
+@xie_knitr_2022
+
+[@xie_bookdown_2022]
+
+[@xie_bookdown_2022]
+
+
+Some list items to test the format
+
+
+List:
+
+- item 1
+- item 2
+  - item 3
+  - item 4
+    - item 5
+    - item 6
+  - item 7
+- item 8
+
+Text again
+
+
+Some random text to test format
+
+\lipsum[1-4]
+-->

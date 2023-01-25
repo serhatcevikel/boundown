@@ -2,7 +2,7 @@ Package: boundown
 Title: An updated R Markdown thesis template using the bookdown package
 Version: 0.2.0.9000
 Authors@R: c(
-    person("Serhat", "Çevikel", email = "serhat.cevikel@boun.edu.tr", role = c("cre", "aut")))
+    person("Serhat", "Çevikel", email = "serhat.cevikel@boun.edu.tr", role = c("cre", "aut"))
 Description: Based on thesisdown package by Chester Ismay and using the bookdown package and LaTeX and Word thesis templates from
     Reed College, this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots
@@ -24,4 +24,4 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 SystemRequirements: pandoc (>= 1.18) - https://pandoc.org
-RoxygenNote: 7.2.3
+RoxygenNote: 7.1.1

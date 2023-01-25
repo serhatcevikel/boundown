@@ -1,0 +1,51 @@
+\chapter*{CURRICULUM VITAE}
+
+\begin{onehalfspace}
+NAME: \insertauthor
+
+\vspace{0.5cm}
+DEGREES AWARDED
+
+PhD in Management, 2023, Boğaziçi University
+
+MBA, xxxx, x University
+
+BA in xxx, yyyy, y University
+
+\vspace{0.5cm}
+AREAS OF SPECIAL INTEREST
+
+Some list of interest, some more
+
+\vspace{0.5cm}
+PROFESSIONAL EXPERIENCE
+
+Some professional experiences
+
+Some more professional experiences
+
+
+
+\vspace{0.5cm}
+AWARDS AND HONORS
+
+Some awards
+
+Some honors
+
+\end{onehalfspace}
+\vspace{0.5cm}
+PUBLICATIONS
+
+*Journal Articles*
+
+\begin{singlespace}
+Complete cite your publications
+\end{singlespace}
+\par
+
+*Some Other Types of Publications*
+
+\begin{singlespace}
+Complete cite your publications
+\end{singlespace}

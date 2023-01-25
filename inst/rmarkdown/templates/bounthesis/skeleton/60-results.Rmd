@@ -1,0 +1,67 @@
+---
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r include_packages_4, include = FALSE}
+library(tidyverse)
+library(data.table)
+library(kableExtra)
+
+knitr::opts_chunk$set(echo = F, cache = FALSE, warning = FALSE, message = FALSE)
+options(kableExtra.latex.load_packages = TRUE)
+options(knitr.table.format = "latex")
+
+panderOptions("p.wrap", "")
+panderOptions("table.split.table", Inf)
+panderOptions("table.split.cells", 20)
+
+# custom function to split long column headers into multiple lines
+splitn <- function(text, n, minn = 15)
+{
+    nc <- nchar(text)
+    if (nc <= minn) return(text)
+    ln <- ceiling(nc / n)
+    text %>% str_replace_all(sprintf("(.{%s})", ln), "\\1\n")
+}
+
+knitr::opts_chunk$set(out.width = "100%") 
+caprep <- function(x) str_replace_all(x, "_", "\\\\_")
+
+verbalize <- function(x) ifelse(x %in% 0:10, as.character(english(x)), x)
+
+library(showtext)
+font_add(family = "Times New Roman", regular = "/usr/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf",
+         italic = "/usr/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf"
+         )
+showtext_auto()
+
+```
+
+# RESULTS
+
+
+A landscape page can be introduced for a wide table.
+
+\newpage
+\blandscape
+\setstretch{1.0}
+```{r ls-table}
+
+iris[1:10,] %>%
+  kable(caption = "A Sample Wide Table",
+        longtable = F, booktabs = T, escape = F) %>%
+  column_spec(1, width = "4.5cm") %>%
+  column_spec(2, width = "4.5cm") %>%
+  column_spec(3, width = "4.5cm") %>%
+  column_spec(4, width = "4.5cm") %>%
+  kable_styling(font_size = 9) %>%
+  row_spec(row = 0, align = "c")
+```
+\setstretch{2.0}
+\elandscape
+
+\newpage
+
+Back to portrait again.

@@ -1,0 +1,8 @@
+\chapter*{ABBREVIATIONS}
+
+
+\begin{tabular}{lcl}
+
+SA   &:    &Some abbreviation\\
+AA    &:    &Another abbreviation \\
+\end{tabular}

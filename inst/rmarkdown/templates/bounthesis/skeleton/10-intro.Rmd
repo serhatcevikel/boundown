@@ -1,0 +1,33 @@
+```{r includes-intro, include = F}
+
+# you may include any packages or preliminaries to be executed at the beginning for the chapter
+library(tidyverse)
+library(data.table)
+library(scales)
+
+# arbitrary R code for test
+iris2 <- iris %>% copy
+setDT(iris2)
+
+```
+
+# INTRODUCTION {#a-tag-example}
+
+Some text can be made italic *as such*.
+
+You may include a singe reference as such: @zahera_investors_2018 or in parentheses [@zahera_investors_2018]
+You may include multiple references as such: \textcite{zahera_investors_2018, weber_disposition_1998} or in parentheses as such: [@zahera_investors_2018; @weber_disposition_1998] 
+
+You may include inline R code as such:
+Number of observations in iris data set is `r iris[, .N]`.
+Thousand separators can be included as such: `r 1e5 %>% comma`
+The main contributions of this thesis to the literature are as follows:
+
+A list can be introduced:
+
+- Some item
+- More items
+
+Any place in the text can be cross referenced with a tag as such: Chapter&nbsp;\@ref(a-tag-example) (p.&nbsp;\pageref{a-tag-example}) makes an introduction with simple examples.
+
+\lipsum[1-4]

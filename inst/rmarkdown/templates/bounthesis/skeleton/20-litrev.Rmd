@@ -1,0 +1,21 @@
+# LITERATURE REVIEW {#litrev}
+
+Section and subsection headers can be introduced as such:
+
+## Some section name {#section-tag-to-refer}
+
+\lipsum[1]
+
+## Some other section name
+
+\lipsum[2]
+
+A footnote can be includd here^[As such.].
+
+### Some subsection name {#some-tag-for-subsection}
+
+\lipsum[3]
+
+### Some other subsection name
+
+\lipsum[4]

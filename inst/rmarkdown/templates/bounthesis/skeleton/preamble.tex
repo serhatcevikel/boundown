@@ -1,0 +1,78 @@
+\usepackage{longtable}
+\usepackage{lipsum}
+\usepackage{tabu}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{caption} % for captions
+\DeclareCaptionFormat{myformat}{#1#2\space#3} % for captions
+\captionsetup{format=myformat, labelsep=period, margin=0pt, indention=0pt, parindent=0pt, hangindent=0pt, singlelinecheck=false, justification=raggedright} % for captions % labelsep=period # style=base, 
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+\usepackage{makecell}
+\setstretch{2.0}
+\usepackage{sectsty}
+\usepackage{fontspec}
+\setmainfont[ItalicFont={texgyretermes-italic.otf}]{texgyretermes-regular.otf}[Scale=1.0] % to correct for 11.4 fontsize scale is added
+\usepackage{geometry}
+\geometry{paper=a4paper, top=2.5cm, bottom=2.5cm, left=4cm, right=2.5cm}
+\raggedright
+\setlength{\parindent}{1.27cm}
+\usepackage{pdflscape}
+\let\paragraph\oldparagraph
+\let\subparagraph\oldsubparagraph
+\AtBeginDocument{\renewcommand{\chaptername}{CHAPTER}}
+\AtBeginDocument{\renewcommand{\appendixname}{APPENDIX}}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\normalsize\centering}   {\chaptertitlename\ \thechapter}{0em}{}
+\titlespacing*{\chapter}{0pt}{-32pt}{2em}
+\titlespacing*{\section}{0pt}{2em}{0em}
+\titlespacing*{\subsection}{0pt}{2em}{0em}
+\titlespacing*{\subsubsection}{0pt}{2em}{0em}
+\titleformat{\section}{\normalfont}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\normalfont}{\thesubsubsection}{0.7em}{}
+\let\oldcontentsname\contentsname
+\renewcommand{\contentsname}{\MakeUppercase\oldcontentsname}
+\let\oldlistfigurename\listfigurename
+\renewcommand{\listfigurename}{\MakeUppercase\oldlistfigurename}
+\let\oldlisttablename\listtablename
+\renewcommand{\listtablename}{\MakeUppercase\oldlisttablename} 
+\usepackage{scrextend}
+\usepackage[bottom]{footmisc} % footnote at bottom margin
+\deffootnote[0.5em]{0em}{0em}{\textsuperscript{\thefootnotemark}\,} % for footnote format, no indent
+\let\raggedfootnote\raggedright % footnote left indent
+\counterwithout{footnote}{chapter} % keep footnote numbering sequential across chapters
+\usepackage{csquotes}
+\usepackage[style=apa6]{biblatex}
+\setlength\bibitemsep{0.5\baselineskip} % for space between reference entries
+\AtEveryBibitem{%
+  \clearfield{note}%
+} % to clear notes in the references
+\AtBeginBibliography{\vspace*{1em}} % extra vertical space between references title and first item
+\usepackage{enumitem} % for justifying lists to the left margin
+\setlist[itemize]{leftmargin=*} % for justifying lists to the left margin
+\usepackage{titletoc}
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\usepackage{flafter} % to force the figures to float after their mention
+\usepackage[titles]{tocloft}
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % to dotfill chapter in toc
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % to dotfill chapter in toc
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % to dotfill chapter in toc
+\setlength{\cftbeforechapskip}{0pt} % to prevent chapter space in toc
+\titlecontents{figure}[0pt]{\hangindent1.5em}{\makebox[1.9cm][l]{\figurename\ \thecontentslabel.\quad}}{}{\dotfill\contentspage} % for lof format
+\titlecontents{table}[0pt]{\hangindent1.5em}{\makebox[1.75cm][l]{\tablename\ \thecontentslabel.\quad}}{}{\dotfill\contentspage} % for lot format
+\usepackage[none]{hyphenat} % to prevent hyphenation
+\setlength\intextsep{3em} % for space wrapping figures and tables 
+\setlength\textfloatsep{3em} % for space wrapping figures and tables 
+\usepackage{hyperref} % for unlinking urls
+\hypersetup{draft} % for unlinkin urls
+\usepackage{pdfpages} % to insert approval page
+\usepackage{nowidow} % for preventing paragraph and biblio orphan and widows 
+\setnowidow[4] % for preventing paragraph and biblio orphan and widows
+\setnoclub[2] % for preventing paragraph and biblio orphan and widows
+\usepackage[margin=-0.25em, indention=0pt, parindent=0pt, hangindent=0pt, font=normalsize, skip=0pt, labelformat=simple, labelsep=none]{subcaption} % for source line below caption. negativemargin for offsetting the initial space after phantom label
+\usepackage{chngcntr} % to remove chapter number from equation numbering
+\counterwithout{equation}{chapter} % remove the chapter number from equation references

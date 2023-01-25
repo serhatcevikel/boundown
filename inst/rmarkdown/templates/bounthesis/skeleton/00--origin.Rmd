@@ -1,0 +1,20 @@
+\begin{center}
+DECLARATION OF ORIGINALITY
+\end{center}\par
+\vspace{2cm}
+
+\noindent
+I, \insertauthor, certify that
+    
+- I am the sole author of this thesis and that I have fully acknowledged and documented in my thesis all sources of ideas and words, including digital resources, which have been produced or published by another person or institution;
+- this thesis contains no material that has been submitted or accepted for a degree or diploma in any other educational institution; 
+- this is a true copy of the thesis approved by my advisor and thesis committee at Boğaziçi University, including final revisions required by them.\par
+
+\vspace{3cm}
+
+Signature.......................................
+
+Date.............................................
+
+\vspace{2cm}
+\vfil

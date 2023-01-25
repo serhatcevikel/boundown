@@ -1,0 +1,9 @@
+# METHODOLOGY {#methodology-chapter}
+
+An equation can be inline as such: $S(t) = P(T > t)$. Or it may be in a separate line with a number and tag. You can cross-refer to it as Equation \@ref(eq:survivor-func):
+
+\begin{equation}
+S(t) = P(T > t) (\#eq:survivor-func)
+\end{equation}
+
+\lipsum[7]
